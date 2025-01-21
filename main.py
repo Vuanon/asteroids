@@ -39,6 +39,11 @@ def main():
             if asteroid.is_colliding(player):
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if asteroid.is_colliding(shot):
+                    asteroid.split()
+                    shot.kill()
+                
 
         screen.fill("black")
 
@@ -53,5 +58,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# :n
-# :prev
